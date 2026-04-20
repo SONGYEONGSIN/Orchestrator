@@ -1,15 +1,23 @@
+import { useState } from "react"
 import Sidebar from "./components/Sidebar"
 import Header from "./components/Header"
 import KpiCard from "./components/KpiCard"
 import TrendChart from "./components/TrendChart"
 import ScheduleEvents from "./components/ScheduleEvents"
 import Timeline from "./components/Timeline"
+import Login from "./components/Login"
 import { IconCoins, IconCreditCardPay, IconFileAnalytics, IconWallet } from "@tabler/icons-react"
 
 function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  if (!isAuthenticated) {
+    return <Login onLogin={() => setIsAuthenticated(true)} />;
+  }
+
   return (
     <div className="flex h-screen bg-[var(--color-surface)] text-[var(--color-text)] font-sans antialiased overflow-hidden">
-      <Sidebar />
+      <Sidebar onLogout={() => setIsAuthenticated(false)} />
       <div className="flex-1 ml-[260px] flex flex-col h-full overflow-hidden relative">
         <Header />
         <main className="flex-1 overflow-y-auto px-8 pb-8 custom-scrollbar relative">
@@ -22,28 +30,28 @@ function App() {
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
               <KpiCard 
                 icon={<IconWallet size={16} />}
-                label="Expenses"
+                label="정기 지출"
                 value="₹125,400"
                 change="↓ -8.5%"
                 trend="down"
               />
               <KpiCard 
                 icon={<IconCoins size={16} />}
-                label="Income"
+                label="사업 수입"
                 value="₹42,850"
                 change="↑ +12.3%"
                 trend="up"
               />
               <KpiCard 
                 icon={<IconCreditCardPay size={16} />}
-                label="Expenses"
+                label="기타 지출"
                 value="₹132,600"
                 change="↓ -9.2%"
                 trend="down"
               />
               <KpiCard 
                 icon={<IconFileAnalytics size={16} />}
-                label="Income"
+                label="순이익"
                 value="₹48,200"
                 change="↑ +15.1%"
                 trend="up"

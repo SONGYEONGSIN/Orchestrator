@@ -1,9 +1,9 @@
 import { IconCalendarEvent, IconChevronDown } from "@tabler/icons-react";
 
 const events = [
-  { title: "Client Sync Call", time: "9 AM - 10 AM", color: "bg-[var(--color-primary)]" },
-  { title: "Design Review", time: "11:30 AM - 1 PM", color: "bg-[var(--color-warning)]" },
-  { title: "Team Standup", time: "3 PM - 4 PM", color: "bg-[var(--color-success)]" },
+  { title: "클라이언트 동기화", time: "오전 9:00 - 오전 10:00", color: "bg-[var(--color-primary)]" },
+  { title: "디자인 리뷰 미팅", time: "오전 11:30 - 오후 1:00", color: "bg-[var(--color-warning)]" },
+  { title: "팀간 스탠드업", time: "오후 3:00 - 오후 4:00", color: "bg-[var(--color-success)]" },
 ];
 
 export default function ScheduleEvents() {
@@ -17,17 +17,17 @@ export default function ScheduleEvents() {
             <div className="w-[5px] h-[5px] border-[1.5px] border-[var(--color-text-faint)] rounded-[1px]"></div>
             <div className="w-[5px] h-[5px] border-[1.5px] border-[var(--color-text-faint)] rounded-[1px]"></div>
           </div>
-          <h3 className="text-[15px] font-bold text-[var(--color-text)]">Schedule & Events</h3>
+          <h3 className="text-[15px] font-bold text-[var(--color-text)]">일정 및 이벤트</h3>
         </div>
         <button className="flex items-center gap-2 px-3.5 py-1.5 text-[12px] font-bold text-[var(--color-text-muted)] bg-[var(--color-surface)] rounded-[8px] hover:shadow-neu-inset-soft transition-all duration-200">
           <IconCalendarEvent size={14} className="text-[var(--color-text-faint)]" />
-          <span>24 Oct 23</span>
+          <span>2023년 10월 24일</span>
           <IconChevronDown size={14} className="text-[var(--color-text-faint)]" />
         </button>
       </div>
 
       <div className="flex justify-between items-center mb-6 px-1">
-        {['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].map((day, i) => {
+        {['월', '화', '수', '목', '금', '토', '일'].map((day, i) => {
           const dateString = (29 + i) > 31 ? (29 + i) - 31 : (29 + i);
           const isToday = i === 2;
           return (

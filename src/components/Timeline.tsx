@@ -2,8 +2,8 @@ import { IconCheck, IconDotsVertical, IconMaximize, IconCalendarEvent, IconChevr
 
 export default function Timeline() {
   const tasks = [
-    { name: "SYS - CORE", progress: 65 },
-    { name: "Phase 1", progress: 35 },
+    { name: "시스템 통합 (CORE)", progress: 65 },
+    { name: "1단계 개발", progress: 35 },
   ];
 
   return (
@@ -16,12 +16,12 @@ export default function Timeline() {
             <div className="w-[5px] h-[5px] border-[1.5px] border-[var(--color-text-faint)] rounded-[1px]"></div>
             <div className="w-[5px] h-[5px] border-[1.5px] border-[var(--color-text-faint)] rounded-[1px]"></div>
           </div>
-          <h3 className="text-[15px] font-bold text-[var(--color-text)]">Timeline Chart</h3>
+          <h3 className="text-[15px] font-bold text-[var(--color-text)]">작업 타임라인</h3>
         </div>
         <div className="flex items-center gap-2">
           <button className="flex items-center gap-2 px-3.5 py-1.5 text-[12px] font-bold text-[var(--color-text-muted)] bg-[var(--color-surface)] rounded-[8px] hover:shadow-neu-inset-soft transition-all duration-200">
             <IconCalendarEvent size={14} className="text-[var(--color-text-faint)]" />
-            1 Oct 23 - 30 Nov 23
+            23년 10월 1일 - 11월 30일
             <IconChevronDown size={14} className="text-[var(--color-text-faint)]" />
           </button>
           <button className="p-1.5 text-[var(--color-text-faint)] bg-[var(--color-surface)] rounded-[8px] hover:shadow-neu-inset-soft transition-all duration-200">
@@ -38,7 +38,7 @@ export default function Timeline() {
         {/* Task Names Column */}
         <div className="flex flex-col">
             <div className="h-8 text-[12px] font-bold text-[var(--color-text)] mb-2 mt-1">
-                Task
+                계획/작업명
             </div>
             {tasks.map((task) => (
                <div key={task.name} className="h-16 flex items-center text-[12px] font-bold text-[var(--color-text-muted)] group cursor-pointer hover:text-[var(--color-primary)] transition-colors">
@@ -53,9 +53,9 @@ export default function Timeline() {
             <div className="flex w-full mb-4">
                 {[1, 2, 3].map((week) => (
                     <div key={week} className="flex-1 border-l border-transparent first:border-none flex flex-col justify-end">
-                        <div className="text-[11px] font-bold text-[var(--color-text-faint)] text-center mb-2">Week {week}</div>
+                        <div className="text-[11px] font-bold text-[var(--color-text-faint)] text-center mb-2">{week}주차</div>
                         <div className="flex justify-between px-2 text-[10px] font-semibold text-[#CBD5E1]">
-                            <span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span>
+                            <span>월</span><span>화</span><span>수</span><span>목</span><span>금</span><span>토</span><span>일</span>
                         </div>
                     </div>
                 ))}

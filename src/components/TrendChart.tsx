@@ -56,7 +56,7 @@ export default function TrendChart() {
             <div className="w-[5px] h-[5px] border-[1.5px] border-[var(--color-text-faint)] rounded-[1px]"></div>
             <div className="w-[5px] h-[5px] border-[1.5px] border-[var(--color-text-faint)] rounded-[1px]"></div>
           </div>
-          <h3 className="text-[15px] font-bold text-[var(--color-text)]">Campaigns</h3>
+          <h3 className="text-[15px] font-bold text-[var(--color-text)]">마케팅 캠페인 성과</h3>
         </div>
         
         <div className="flex items-center gap-2">
@@ -66,7 +66,7 @@ export default function TrendChart() {
                 <IconChevronDown size={14} className="text-[var(--color-text-faint)]" />
             </button>
             <button className="flex items-center gap-2 px-3.5 py-1.5 text-[12px] font-bold text-[var(--color-text-muted)] bg-[var(--color-surface)] rounded-[8px] hover:shadow-neu-inset-soft transition-all duration-200">
-                View
+                조회하기
                 <IconChevronDown size={14} className="text-[var(--color-text-faint)]" />
             </button>
             <button className="p-1.5 text-[var(--color-text-faint)] bg-[var(--color-surface)] rounded-[8px] hover:shadow-neu-inset-soft transition-all duration-200">
@@ -105,11 +105,11 @@ export default function TrendChart() {
       <div className="mt-4 flex justify-center items-center gap-6 text-[11px] font-bold text-[var(--color-text-faint)] tracking-wide">
           <div className="flex items-center gap-2">
               <span className="w-2.5 h-2.5 rounded-full bg-[var(--color-primary)]"></span>
-              <span>Metric A</span>
+              <span>지표 A (조회수)</span>
           </div>
           <div className="flex items-center gap-2">
               <span className="w-2.5 h-2.5 rounded-full bg-[#CBD5E1]"></span>
-              <span>Metric B</span>
+              <span>지표 B (전환율)</span>
           </div>
       </div>
     </div>
